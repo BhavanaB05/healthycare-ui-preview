@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  @apply text-slate-800 antialiased;
+  background-color: #ffffff;
+  padding-bottom: env(safe-area-inset-bottom, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Turquoise / teal healthcare app */
+@layer components {
+  .card {
+    @apply rounded-2xl overflow-hidden;
+    background-color: #daf6ee;
+    box-shadow: 0 1px 3px rgba(71, 186, 135, 0.08), 0 8px 24px rgba(71, 186, 135, 0.06);
+    border: 1px solid rgba(143, 202, 183, 0.5);
+  }
+  .card-header-accent {
+    @apply flex items-center gap-3 pb-3 mb-4 border-b;
+    border-color: rgba(143, 202, 183, 0.5);
+  }
+  .section-label {
+    @apply text-[11px] font-bold uppercase tracking-widest text-brand-secondary mb-1;
+  }
+  .btn-primary {
+    min-height: 48px;
+    @apply px-5 py-3 rounded-xl font-semibold transition-all focus:ring-2 focus:ring-brand-teal focus:ring-offset-2 active:scale-[0.98];
+    background-color: #7fffd4;
+    color: #1e3a32;
+    box-shadow: 0 2px 8px rgba(71, 186, 135, 0.25);
+  }
+  .btn-primary:hover {
+    background-color: #47ba87;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(71, 186, 135, 0.35);
+  }
+  .btn-primary:disabled {
+    @apply opacity-60 cursor-not-allowed scale-100;
+    box-shadow: none;
+  }
+  .btn-secondary {
+    min-height: 48px;
+    @apply px-5 py-3 rounded-xl font-semibold text-white transition-all border-0 focus:ring-2 focus:ring-brand-secondary focus:ring-offset-2 active:scale-[0.98];
+    background-color: #64bfa4;
+    box-shadow: 0 2px 6px rgba(100, 191, 164, 0.3);
+  }
+  .btn-secondary:hover {
+    background-color: #47ba87;
+    box-shadow: 0 4px 10px rgba(71, 186, 135, 0.35);
+  }
+  .input-field {
+    min-height: 48px;
+    @apply w-full px-4 py-3 rounded-xl border outline-none transition-all text-base bg-white;
+    border-color: rgba(143, 202, 183, 0.6);
+  }
+  .input-field:focus {
+    border-color: #47ba87;
+    box-shadow: 0 0 0 3px rgba(71, 186, 135, 0.2);
+  }
+  .input-field::placeholder {
+    @apply text-slate-400;
+  }
+  .label {
+    @apply block text-[13px] font-semibold text-slate-600 mb-2 tracking-tight;
+  }
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px] flex items-center justify-center touch-manipulation;
+  }
+}
